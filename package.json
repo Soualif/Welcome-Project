@@ -1,25 +1,16 @@
 {
-  "name": "opportunity-screen-by-soualif",
+  "name": "opportunity-screen-by-muhmuhmiau",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "dev": "netlify dev",
-    
-    "packages:utils": "yarn --cwd src/utils",
-    "packages:lambda": "yarn --cwd src/lambda",
-    "packages:www": "yarn install --cwd src/www --network-concurrency 1",
-    "build:www": "yarn --cwd src/www build"
-    
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "axios": "^1.3.4",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13",
-    "netlify-cli": "^3.8.1",
-    "npm-run-all": "^4.1.5"
+    "vue": "^3.2.13"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -29,7 +20,6 @@
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3"
-  
   },
   "eslintConfig": {
     "root": true,
@@ -51,5 +41,4 @@
     "not dead",
     "not ie 11"
   ]
-  
 }
