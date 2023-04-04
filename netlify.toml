@@ -1,47 +1,33 @@
-
 [build]
-  
-  base = "project/"
+   base = "project/"
+   publish = "build-output/"
+   command = "echo 'default context'"
 
-  
-
-  publish = "build-output/"
-
-  # Default build command.
-  command = "npm run dev"
 
 [[plugins]]
-  # Installs the Lighthouse Build Plugin for all deploy contexts
-  package = "@netlify/plugin-lighthouse"
-
-
-[context.production]
-  publish = "output/"
-  command = "make publish"
-  environment = { NODE_VERSION = "14.15.3" }
-
+   package = "@netlify/plugin-lighthouse"
+   publish = "output/"
+   command = "make publish"
+   environment = { NODE_VERSION = "14.15.3" }
 
 [context.deploy-preview]
-  publish = "dist/"
-
+   publish = "dist/"
 
 [context.deploy-preview.environment]
-  NOT_PRIVATE_ITEM = "not so secret"
-
+   NOT_PRIVATE_ITEM = "not so secret"
 
 [context.branch-deploy]
-  command = "echo branch"
+   command = "echo branch"
 [context.branch-deploy.environment]
-  NODE_ENV = "development"
-
+   NODE_ENV = "development"
 
 [context.dev.environment]
-  NODE_ENV = "development"
+   NODE_ENV = "development"
 
 
-[context.staging] # “staging” is a branch name
-  command = "echo 'staging'"
-  base = "staging"
+[context.staging]
+   command = "echo 'staging'"
+   base = "staging"
 
 
 [context."feat/branch"]
@@ -59,23 +45,12 @@
 [[redirects]]
   from = "/old-path"
   to = "/new-path"
-
-  
   status = 302
-
-  
   force = true
-
-  
   query = {id = ":id"}
-
-  
   conditions = {Language = ["en"], Country = ["US"]}
-
-  
   signed = "API_SIGNATURE_TOKEN"
 
- 
   [redirects.headers]
     X-From = "Netlify"
     X-Api-Key = "some-api-key-string"
@@ -102,17 +77,15 @@
     X-XSS-Protection = "1; mode=block"
     Content-Security-Policy = "frame-ancestors https://www.facebook.com"
 
-    
+   
+  cache-control = '''
   max-age=0,
   no-cache,
   no-store,
   must-revalidate'''
-
-   
-    Basic-Auth = "someuser:somepassword anotheruser:anotherpassword"
+  Basic-Auth = "someuser:somepassword anotheruser:anotherpassword"
 
 [functions]
-  
   directory = "functions/"
 
 
@@ -120,4 +93,3 @@
   command = "yarn start"
   port = 8888
   publish = "dist"
-
