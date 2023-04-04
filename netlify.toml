@@ -4,5 +4,5 @@ base = "client/"
 
 publish = "public/"
 
-command = "npm run build"
+command = "npm run install && npm run build"
 
