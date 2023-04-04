@@ -4,7 +4,7 @@ base = "client/"
 
 publish = "public/"
 
-command = "npm run build"
+command = "cd client && npm run build"
 
 [[headers]]
 for = "*.js" # js files should be set this way
