@@ -6,29 +6,3 @@ publish = "public/"
 
 command = "npm run build"
 
-[[headers]]
-for = "*.js" # js files should be set this way
-[headers.values]
-Cache-Control = "public, max-age=604800"
-
-[[headers]]
-for = "*.css" # css files too
-[headers.values]
-Cache-Control = "public, max-age=604800"
-
-[[plugins]]
-package = "@netlify/plugin-lighthouse"
-
-# optional, fails build when a category is below a threshold
-[plugins.inputs.thresholds]
-accessibility = 0.9
-best-practices = 0.9
-performance = 0.1
-pwa = 0.5
-seo = 0.9
-
-[[plugins]]
-package = "netlify-plugin-gatsby-cache"
-
-[[plugins]]
-package = "netlify-plugin-inline-critical-css"
