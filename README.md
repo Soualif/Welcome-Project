@@ -1,5 +1,4 @@
-# samir-vue-screen
-
+# welcome-screen-project-by-soualif
 ## Project setup
 
 ```
